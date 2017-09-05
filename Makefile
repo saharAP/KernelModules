@@ -1,9 +1,10 @@
-kernelsrc=$(shell uname -r)
+
+kernelsrcc=$(shell uname -r)
 
 obj-m += hello.o
 
 all:
-	make -C /lib/modules/$(kernelsrc)/build  M=$(PWD) modules
+	make -C /lib/modules/$(kernelsrcc)/build  M=$(PWD) modules
 
 
 
