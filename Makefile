@@ -1,12 +1,11 @@
 
-kernelsrcc=$(shell uname -r)
+SUBDIRS =  hello
 
-obj-m += hello.o
+all: subdirs
 
-all:
-	make -C /lib/modules/$(kernelsrcc)/build  M=$(PWD) modules
-
-
+subdirs:
+	for n in $(SUBDIRS); do $(MAKE) -C $$n || exit 1; done
 
 clean:
-	make -C /lib/modules/$(kernelsrc)/build  M=$(PWD) clean 
+	for n in $(SUBDIRS); do $(MAKE) -C $$n clean; done
+

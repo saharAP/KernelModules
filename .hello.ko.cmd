@@ -1,1 +1,0 @@
-cmd_/home/harry/EMBEDDED/KernelModules/hello.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/harry/EMBEDDED/KernelModules/hello.ko /home/harry/EMBEDDED/KernelModules/hello.o /home/harry/EMBEDDED/KernelModules/hello.mod.o
