@@ -3,7 +3,7 @@
 #include <linux/init.h>
 #include <linux/module.h>
 #include <linux/kernel.h>
-
+#include <linux/sched.h>
 
 static char* whom="World";
 
@@ -13,7 +13,7 @@ static int howmany=1;
 
 module_param(howmany,int,0);
 
-static int __init hello_init(void){
+static int  hello_init(void){
 
 int i;
 
@@ -26,9 +26,11 @@ return 0;
 
 }
 
-static void __exit hello_exit(void){
+static void  hello_exit(void){
 
-pr_alert("exit %s",whom);
+printk(KERN_ALERT "hello exit\n");
+printk(KERN_INFO "The process is \"%s\" (pid %i)\n",current->comm, current->pid);
+//pr_alert("exit %s",whom);
 }
 
 

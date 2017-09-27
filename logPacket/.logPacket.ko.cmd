@@ -1,0 +1,1 @@
+cmd_/root/KernelModules/logPacket/logPacket.ko := ld -r -m elf_x86_64 -T /usr/src/linux-headers-3.16.0-4-common/scripts/module-common.lds --build-id  -o /root/KernelModules/logPacket/logPacket.ko /root/KernelModules/logPacket/logPacket.o /root/KernelModules/logPacket/logPacket.mod.o
